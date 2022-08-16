@@ -1,22 +1,22 @@
-import React ,{useState} from 'react'
+import React, { useState } from 'react'
 
 export default function Form(props) {
-    const handleonchange=(event)=>{
+    const handleonchange = (event) => {
         SetText(event.target.value);
     }
-    const handleUpClick=()=>{
+    const handleUpClick = () => {
         SetText(text.toUpperCase());
     }
-    const handlelowClick=()=>{
+    const handlelowClick = () => {
         SetText(text.toLowerCase());
     }
-    const handcleartext=()=>{
+    const handcleartext = () => {
         SetText('');
-    } 
+    }
     const downloadTxtFile = () => {
         const element = document.createElement("a");
         const file = new Blob([text], {
-          type: "text/plain"
+            type: "text/plain"
         });
         element.href = URL.createObjectURL(file);
         element.download = "myFile.txt";
@@ -25,10 +25,10 @@ export default function Form(props) {
     const [text, SetText] = useState("");
 
     return (
-        <div>
+        <div style={{backgroundColor: props.mode? '#555555' :'white',color:props.mode? 'white':'black'}}>
             <div className="textbox">
                 <h2>{props.title}</h2>
-                <textarea  id="areafortext" value={text} onChange={handleonchange} placeholder="Enter text here" cols="150" rows="10"></textarea>
+                <textarea id="areafortext" value={text} onChange={handleonchange} style={{backgroundColor: props.mode? '#555555' :'white',color:props.mode? 'white':'black'}} cols="150" rows="10"></textarea>
                 <button className='btn' onClick={handleUpClick}>Convert to UpperCase</button>
                 <button className='btn' onClick={handlelowClick}>Convert to Lowercase</button>
                 <button className='btn' onClick={handcleartext}>Clear Text</button>
@@ -38,11 +38,11 @@ export default function Form(props) {
                 <h1>{props.title2}</h1>
                 <p>{(text.split(' ').filter(word => word !== '')).length} words and {text.length} characters</p>
                 <h4>Average time to read</h4>
-                <span>{0.008*((text.split(' ').filter(word => word !== '')).length)} minutes</span>
+                <span>{0.008 * ((text.split(' ').filter(word => word !== '')).length)} minutes</span>
             </div>
         </div>
     )
 }
 Form.defaultProps = {
     title: 'Give me title'
-  };
+};

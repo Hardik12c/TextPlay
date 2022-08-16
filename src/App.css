@@ -5,14 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* designing navbar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(41 41 41);
-  color: white;
 }
 
 nav .logo {
@@ -33,19 +30,15 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
   text-decoration: none;
   font-family: 'Lato', sans-serif;
-}
-
-nav ul li a:hover {
-  border-bottom: 2px solid rgb(111, 214, 255);
 }
 
 /* designing textbox */
 .textbox {
   width: 80%;
-  margin: 30px auto;
+  margin: auto;
+  padding: 43px 0px;
   font-size: 1.5rem;
   font-family: 'Varela Round', sans-serif;
 }
@@ -83,4 +76,14 @@ nav ul li a:hover {
 }
 .summary h4{
   margin: 10px 0px;
+}
+/* about us section */
+.container{
+  height: 100vh;
+}
+.aboutsection{
+  width: 80%;
+  padding: 20px 0px;
+  margin: auto;
+  text-align: justify;
 }
