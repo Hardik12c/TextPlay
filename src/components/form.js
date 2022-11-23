@@ -6,12 +6,15 @@ export default function Form(props) {
     }
     const handleUpClick = () => {
         SetText(text.toUpperCase());
+        props.showalert("Converted to Uppercase","success");
     }
     const handlelowClick = () => {
         SetText(text.toLowerCase());
+        props.showalert("Converted to Lowercase","success");
     }
     const handcleartext = () => {
         SetText('');
+        props.showalert("Your Text has been gone","danger");
     }
     const downloadTxtFile = () => {
         const element = document.createElement("a");
@@ -23,7 +26,7 @@ export default function Form(props) {
         element.click();
     }
     const [text, SetText] = useState("");
-
+    
     return (
         <div style={{backgroundColor: props.mode? '#555555' :'white',color:props.mode? 'white':'black'}}>
             <div className="textbox">
