@@ -9,7 +9,7 @@ export default function Navbar(props) {
                 <div className='logo'>{props.title}</div>
                 <ul>
                     <li><Link style={{color: props.mode? 'white':'black'}} to="/">Home</Link></li>
-                    <li><Link style={{color: props.mode? 'white':'black'}}  to="/about">About</Link></li>
+                    <li><Link style={{color: props.mode? 'white':'black'}} onClick={()=>(document.title="TextPlay-About")}  to="/about">About</Link></li>
                     <li><Link style={{color: props.mode? 'white':'black'}}  to="/">Contact us</Link></li>
                     <li>
                         <div className="custom-control custom-switch ">
