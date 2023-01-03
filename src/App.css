@@ -80,6 +80,7 @@ nav ul li a {
 /* about us section */
 .container{
   height: 100vh;
+  max-width: 100%;
 }
 .aboutsection{
   width: 80%;

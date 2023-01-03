@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
 
@@ -7,9 +8,9 @@ export default function Navbar(props) {
             <nav style={{backgroundColor: props.mode? 'rgb(41 41 41)' :'#e5e5e5', color: props.mode? 'white' : 'black',}}>
                 <div className='logo'>{props.title}</div>
                 <ul>
-                    <li><a style={{color: props.mode? 'white':'black'}} href="/">Home</a></li>
-                    <li><a style={{color: props.mode? 'white':'black'}}  href="/">About</a></li>
-                    <li><a style={{color: props.mode? 'white':'black'}}  href="/">Contact us</a></li>
+                    <li><Link style={{color: props.mode? 'white':'black'}} to="/">Home</Link></li>
+                    <li><Link style={{color: props.mode? 'white':'black'}}  to="/about">About</Link></li>
+                    <li><Link style={{color: props.mode? 'white':'black'}}  to="/">Contact us</Link></li>
                     <li>
                         <div className="custom-control custom-switch ">
                             <input type="checkbox" onClick={props.changemode} className="custom-control-input " id="customSwitch1" />
